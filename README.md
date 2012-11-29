@@ -3,6 +3,7 @@ hconfig is a small shell script to help developpers and testers switching DNS en
 to install it:
 ```
 sudo wget -O /usr/sbin/hconfig https://raw.github.com/povtux/hconfig/master/hconfig
+sudo chmod 755 /usr/sbin/hconfig
 sudo hconfig --init
 ```
 
