@@ -1,6 +1,7 @@
 hconfig is a small shell script to help developpers and testers switching DNS environnement between project to manage their /etc/hosts file.
 
 to install it:
+Caution, line by line!!
 ```
 sudo wget -O /usr/sbin/hconfig https://raw.github.com/povtux/hconfig/master/hconfig
 sudo chmod 755 /usr/sbin/hconfig
