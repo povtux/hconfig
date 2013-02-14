@@ -3,10 +3,6 @@
 # V1.1 - 2013-02-14
 # under GPL
 
-
-# must run as root
-[ "`whoami`" != "root" ] && echo "must be root to run this!" && exit 1
-
 #INIT GLOBAL VARS
 HOSTS_FILE=/etc/hosts
 CONFIG_DIR=/etc/hconfig.d
@@ -82,6 +78,9 @@ do
 	*)
 		case $arg in
 		"--init")
+			# this action must run as root
+			[ "`whoami`" != "root" ] && echo "must be root to run this!" && exit 1
+
 			mkdir -p $CONFIG_DIR/dev
 			mkdir -p $CONFIG_DIR/preprod
 			mkdir -p $CONFIG_DIR/prod
@@ -115,6 +114,9 @@ do
 	;;
 	esac
 done
+
+# under this limit, all actions must run as root
+[ "`whoami`" != "root" ] && echo "must be root to run this!" && exit 1
 
 # if not in BASE_MODE, add the additionnal conf
 if [ $BASE_MODE -eq 0 ]
